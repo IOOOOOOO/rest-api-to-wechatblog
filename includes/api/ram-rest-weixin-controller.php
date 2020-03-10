@@ -191,7 +191,7 @@ class RAM_REST_Weixin_Controller  extends WP_REST_Controller{
             $avatar= get_user_meta($_user->ID, 'avatar', true );
             if(empty($avatar))
             {
-                $avatar = plugins_url()."/".REST_API_TO_MINIPROGRAM_PLUGIN_NAME."/includes/images/gravatar.png";
+                $avatar = plugins_url()."/".REST_API_TO_WECHATBLOG_PLUGIN_NAME."/includes/images/gravatar.png";
             }
 
             $userLevel=getUserLevel($_user->ID);
@@ -502,8 +502,8 @@ class RAM_REST_Weixin_Controller  extends WP_REST_Controller{
         $openid =$request['openid']; 
 
         $qrcodeName = 'qrcode-'.$postid.'.png';//文章小程序二维码文件名     
-        $qrcodeurl = REST_API_TO_MINIPROGRAM_PLUGIN_DIR.'qrcode/'.$qrcodeName;//文章小程序二维码路径
-        $qrcodeimgUrl = plugins_url().'/'.REST_API_TO_MINIPROGRAM_PLUGIN_NAME.'/qrcode/'.$qrcodeName;
+        $qrcodeurl = REST_API_TO_WECHATBLOG_PLUGIN_DIR.'qrcode/'.$qrcodeName;//文章小程序二维码路径
+        $qrcodeimgUrl = plugins_url().'/'.REST_API_TO_WECHATBLOG_PLUGIN_NAME.'/qrcode/'.$qrcodeName;
         //自定义参数区域，可自行设置      
         $appid = get_option('wf_appid');
         $appsecret = get_option('wf_secret');

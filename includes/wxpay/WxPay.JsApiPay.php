@@ -1,5 +1,5 @@
 <?php
-require_once( REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/wxpay/WxPay.Api.php' );
+require_once( REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/wxpay/WxPay.Api.php' );
 
 /**
  * 

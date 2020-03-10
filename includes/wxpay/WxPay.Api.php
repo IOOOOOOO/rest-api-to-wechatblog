@@ -1,9 +1,9 @@
 <?php
 
 
-require_once( REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/wxpay/WxPay.Data.php' );
-require_once( REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/wxpay/WxPay.Config.php' );
-require_once( REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/wxpay/WxPay.Exception.php' );
+require_once( REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/wxpay/WxPay.Data.php' );
+require_once( REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/wxpay/WxPay.Config.php' );
+require_once( REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/wxpay/WxPay.Exception.php' );
 
 /**
  * 

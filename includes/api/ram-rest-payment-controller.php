@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-require_once( REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/wxpay/WxPay.Api.php' );
-require_once( REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/wxpay/WxPay.JsApiPay.php' );
-require_once( REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/wxpay/WxPay.Notify.php' );
+require_once( REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/wxpay/WxPay.Api.php' );
+require_once( REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/wxpay/WxPay.JsApiPay.php' );
+require_once( REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/wxpay/WxPay.Notify.php' );
 
 
 class RAW_REST_Payment_Controller  extends WP_REST_Controller{

@@ -11,20 +11,20 @@ WordPress requires at least: 4.7.1
 */
 
 
-define('REST_API_TO_MINIPROGRAM_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('REST_API_TO_MINIPROGRAM_PLUGIN_FILE',__FILE__);
-const REST_API_TO_MINIPROGRAM_PLUGIN_NAME='rest-api-to-wechatblog';
+define('REST_API_TO_WECHATBLOG_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('REST_API_TO_WECHATBLOG_PLUGIN_FILE',__FILE__);
+const REST_API_TO_WECHATBLOG_PLUGIN_NAME='rest-api-to-wechatblog';
 
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/ram-util.php' );
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/ram-api.php' );
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/ram-weixin-api.php');
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/settings/wp-wechat-config.php');
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/settings/wp-post-config.php');
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-comment-fields.php');
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-content.php');
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-post-fields.php');
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-category.php');
-include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-users-columns.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/ram-util.php' );
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/ram-api.php' );
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/ram-weixin-api.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/settings/wp-wechat-config.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/settings/wp-post-config.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/filter/ram-custom-comment-fields.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/filter/ram-custom-content.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/filter/ram-custom-post-fields.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/filter/ram-custom-category.php');
+include(REST_API_TO_WECHATBLOG_PLUGIN_DIR . 'includes/filter/ram-custom-users-columns.php');
 
 if ( ! class_exists( 'RestAPIWeChatBlog' ) ) {
 
@@ -73,15 +73,15 @@ if ( ! class_exists( 'RestAPIWeChatBlog' ) ) {
 
 
     // 实例化并加入全局变量
-    $GLOBALS['RestAPIMiniProgram'] = new RestAPIWeChatBlog();
+    $GLOBALS['RestAPIWeChatBlog'] = new RestAPIWeChatBlog();
     
     function RAW() {
         
-        if( ! isset( $GLOBALS['RestAPIMiniProgram'] ) ) {
-            $GLOBALS['RestAPIMiniProgram'] = new RestAPIWeChatBlog();
+        if( ! isset( $GLOBALS['RestAPIWeChatBlog'] ) ) {
+            $GLOBALS['RestAPIWeChatBlog'] = new RestAPIWeChatBlog();
         }
         
-        return $GLOBALS['RestAPIMiniProgram'];
+        return $GLOBALS['RestAPIWeChatBlog'];
     }
 
     function ram_plugin_action_links( $links, $file ) {
@@ -89,11 +89,11 @@ if ( ! class_exists( 'RestAPIWeChatBlog' ) ) {
             return $links;
         }
 
-        $settings_link = '<a href="https://www.iacblog.com/" target="_blank"> <span style="color:green; font-weight:bold;">' . esc_html__( '技术支持', 'REST API TO MiniProgram' ) . '</span></a>';
+        $settings_link = '<a href="https://www.iacblog.com/" target="_blank"> <span style="color:green; font-weight:bold;">' . esc_html__( '技术支持', 'REST API TO WeChatBlog' ) . '</span></a>';
 
         array_unshift( $links, $settings_link );
 
-        $settings_link = '<a href="admin.php?page=weixinapp_slug">' . esc_html__( '设置', 'REST API TO MiniProgram' ) . '</a>';
+        $settings_link = '<a href="admin.php?page=weixinapp_slug">' . esc_html__( '设置', 'REST API TO WeChatBlog' ) . '</a>';
 
         array_unshift( $links, $settings_link );
 

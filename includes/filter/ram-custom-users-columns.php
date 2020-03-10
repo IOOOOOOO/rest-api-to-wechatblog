@@ -19,7 +19,7 @@ function  getAvatar($userId)
 	$avatar= get_user_meta( $userId, 'avatar', true );
 	if(empty($avatar))
 	{		
-		$avatarImg ='<img  src="'.plugins_url().'/'.REST_API_TO_MINIPROGRAM_PLUGIN_NAME.'/includes/images/gravatar.png"  width="20px" heigth="20px"/>';
+		$avatarImg ='<img  src="'.plugins_url().'/'.REST_API_TO_WECHATBLOG_PLUGIN_NAME.'/includes/images/gravatar.png"  width="20px" heigth="20px"/>';
 	}
 	else{
 		$avatarImg ='<img  src="'.$avatar.'"  width="20px" heigth="20px"/>';

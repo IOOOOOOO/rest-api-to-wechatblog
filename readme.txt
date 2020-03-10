@@ -84,4 +84,4 @@ License URI: https://www.mit-license.org/
 
 == Upgrade Notice == 
 
-如果你曾经安装过wp-rest-api-for-app 请先卸载此插件,REST API TO MiniProgram无法与该插件同时使用,但会保持并加绒该插件的功能.
+如果你曾经安装过wp-rest-api-for-app 请先卸载此插件,REST API TO WeChatBlog无法与该插件同时使用,但会保持并加绒该插件的功能.

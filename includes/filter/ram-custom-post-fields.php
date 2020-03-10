@@ -139,7 +139,7 @@ function custom_post_fields( $data, $post, $request) {
 
             }
             else{
-              $avatar = plugins_url()."/".REST_API_TO_MINIPROGRAM_PLUGIN_NAME."/includes/images/gravatar.png";
+              $avatar = plugins_url()."/".REST_API_TO_WECHATBLOG_PLUGIN_NAME."/includes/images/gravatar.png";
               $_avatarurl['avatarurl']  =$avatar;
             }
             $avatarurls[] = $_avatarurl; 

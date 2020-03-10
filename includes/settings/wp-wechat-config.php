@@ -78,7 +78,7 @@ function weixinapp_settings_page() {
 <h2>小程序API设置</h2>
 
 
-<p>Rest API to miniprogram by <a href="https://www.iacblog.com/" target="_blank">NiZerin</a>.
+<p>Rest API to wechatblog by <a href="https://www.iacblog.com/" target="_blank">NiZerin</a>.
 <?php
 
 if (!empty($_REQUEST['settings-updated']))
