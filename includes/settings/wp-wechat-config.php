@@ -6,15 +6,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function weixinapp_create_menu() {
     // 创建新的顶级菜单
-    add_menu_page('微慕小程序', '微慕小程序', 'administrator', 'weixinapp_slug', 'weixinapp_settings_page', plugins_url('rest-api-to-miniprogram/includes/images/icon16.png'),null);
+    add_menu_page('微慕小程序', '微慕小程序', 'administrator', 'weixinapp_slug', 'weixinapp_settings_page', plugins_url('rest-api-to-wechatblog/includes/images/icon16.png'),null);
     // 调用注册设置函数
     add_action( 'admin_init', 'register_weixinappsettings' );
 }
 
 function get_jquery_source() {
         $url = plugins_url('',__FILE__); 
-        wp_enqueue_style("tabs", plugins_url()."/rest-api-to-miniprogram/includes/js/tab/tabs.css", false, "1.0", "all");
-        wp_enqueue_script("tabs", plugins_url()."/rest-api-to-miniprogram/includes/js/tab/tabs.min.js", false, "1.0");
+        wp_enqueue_style("tabs", plugins_url()."/rest-api-to-wechatblog/includes/js/tab/tabs.css", false, "1.0", "all");
+        wp_enqueue_script("tabs", plugins_url()."/rest-api-to-wechatblog/includes/js/tab/tabs.min.js", false, "1.0");
 }
 
 function register_weixinappsettings() {
@@ -75,10 +75,10 @@ function weixinapp_settings_page() {
 ?>
 <div class="wrap">
 
-<h2>微慕小程序设置</h2>
+<h2>小程序API设置</h2>
 
 
-<p>Rest API to miniprogram by <a href="https://www.watch-life.net" target="_blank">守望轩</a>.
+<p>Rest API to miniprogram by <a href="https://www.iacblog.com/" target="_blank">NiZerin</a>.
 <?php
 
 if (!empty($_REQUEST['settings-updated']))
@@ -256,39 +256,7 @@ if (version_compare(PHP_VERSION, '5.6.0', '<=') )
                         </tr>
 </table>
     </div>
-
-    <h2>微慕增强版</h2>
-    <div class="section">
-        <div style="display: flex; flex-direction: row; margin-bottom: 10px">
-            <a href="https://www.minapper.com" target="_blank" style="text-decoration: none"><div style="width:120px; height:32px; background-color: #ff8f3b; border-radius: 4px; color: #fff;display: flex;justify-content: center; align-items: center;margin-right: 16px">微慕官网</div></a>
-           <a href="https://mall.minapper.com"  target="_blank" style="text-decoration: none"><div style="width:120px; height:32px; background-color: #fff; border: 1px solid #ff8f3b; border-radius: 4px; box-sizing: border-box; color: #ff8f3b;display: flex;justify-content: center; align-items: center">微慕商城</div></a>
-        </div>
-                <p style="color: #4c4c4c;text-align:justify; line-height: 2">微慕增强版WordPress小程序是一款，在原守望轩开源小程序（现微慕开源小程序）基础上重新架构、设计、优化过的wordpress多端小程序，性能和用户体验更佳，界面设计更加简洁清新，同时打通<span style="font-weight:bold">微信小程序、QQ小程序、百度小程序、支付宝小程序、头条小程序...真正实现一站多端</span>，可使用微信扫描下方小程序码直接体验：</p>
-        <div>
-            <img src="https://plusimg.minapper.com/wp-content/uploads/2019/08/1565183497-%E5%BE%AE%E6%85%95%E6%B5%B7%E6%8A%A5-2019%E5%B9%B47%E6%9C%88.jpg" alt="微慕增强版" width="100%"></img>
-        </div>
-    </div>
-
-    <h2>微慕版专业版</h2>
-    <div class="section">
-        <div style="display: flex; flex-direction: row; margin-bottom: 10px">
-            <a href="https://www.minapper.com" target="_blank" style="text-decoration: none"><div style="width:120px; height:32px; background-color: #fc6e6e; border-radius: 4px; color: #fff;display: flex;justify-content: center; align-items: center;margin-right: 16px">微慕官网</div></a>
-           <a href="https://mall.minapper.com"  target="_blank" style="text-decoration: none"><div style="width:120px; height:32px; background-color: #fff; border: 1px solid #fc6e6e; border-radius: 4px; box-sizing: border-box; color: #fc6e6e;display: flex;justify-content: center; align-items: center">微慕商城</div></a>
-        </div>
-                <p style="color: #4c4c4c;text-align:justify; line-height: 2">微慕版专业版WordPress小程序和插件，在“守望轩”开源小程序的基础上，架构完全重构，在性能上大幅度优化，增加了<span style="font-weight:bold">动态圈子、积分系统、文章投稿、发布动态、付费阅读、会员权限、多种图文列表样式、预约表单、模板消息</span>等功能，并且免费提供标准版、旅游版、图片版、企业版4套前端模板，可使用微信扫描下方小程序码直接体验：</p>
-        <div>
-            <img src="https://www.watch-life.net/images/minapper-pro.jpg" alt="微慕专业版" width="100%"></img>
-
-        </div>
-    </div>
-
-    
-
-
-
  </div>
-
-    
     <?php submit_button();?>
 </form>
  <?php get_jquery_source(); ?>

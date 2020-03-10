@@ -13,7 +13,7 @@ WordPress requires at least: 4.7.1
 
 define('REST_API_TO_MINIPROGRAM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('REST_API_TO_MINIPROGRAM_PLUGIN_FILE',__FILE__);
-const REST_API_TO_MINIPROGRAM_PLUGIN_NAME='rest-api-to-miniprogram';
+const REST_API_TO_MINIPROGRAM_PLUGIN_NAME='rest-api-to-wechatblog';
 
 include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/ram-util.php' );
 include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/ram-api.php' );
@@ -26,9 +26,9 @@ include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-post-fi
 include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-category.php');
 include(REST_API_TO_MINIPROGRAM_PLUGIN_DIR . 'includes/filter/ram-custom-users-columns.php');
 
-if ( ! class_exists( 'RestAPIMiniProgram' ) ) {
+if ( ! class_exists( 'RestAPIWeChatBlog' ) ) {
 
-    class RestAPIMiniProgram {
+    class RestAPIWeChatBlog {
         public $wxapi = null;
         public function __construct() {
             //定制化内容输出，对pc端和api都生效
@@ -73,12 +73,12 @@ if ( ! class_exists( 'RestAPIMiniProgram' ) ) {
 
 
     // 实例化并加入全局变量
-    $GLOBALS['RestAPIMiniProgram'] = new RestAPIMiniProgram();
+    $GLOBALS['RestAPIMiniProgram'] = new RestAPIWeChatBlog();
     
     function RAW() {
         
         if( ! isset( $GLOBALS['RestAPIMiniProgram'] ) ) {
-            $GLOBALS['RestAPIMiniProgram'] = new RestAPIMiniProgram();
+            $GLOBALS['RestAPIMiniProgram'] = new RestAPIWeChatBlog();
         }
         
         return $GLOBALS['RestAPIMiniProgram'];
